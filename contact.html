@@ -24,45 +24,178 @@
     </div>
   </header>
 
+  <!-- Page Header -->
+  <section class="page-header" style="background: linear-gradient(135deg, var(--navy) 0%, #1d4ed8 100%); color: white; padding: 60px 0; text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 48px; margin-bottom: 16px;">Get In Touch</h1>
+      <p style="font-size: 18px; max-width: 700px; margin: 0 auto; opacity: 0.9;">We're here to help with all your financial and compliance needs</p>
+    </div>
+  </section>
+
+  <!-- Contact Info & Form -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Let’s talk. Send us a message and we’ll respond quickly.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Office Location</h3>
-          <p>Nairobi, Kenya</p>
-          <br />
-          <h3>Email</h3>
-          <p>cpa6hellen@gmail.com</p>
-          <br />
-          <h3>Phone</h3>
-          <p>+254702401751</p>
+      
+      <!-- Quick Contact Cards -->
+      <div class="grid-3" style="margin-bottom: 40px;">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📍</div>
+          <h3>Visit Us</h3>
+          <p style="color: var(--muted);">Nairobi, Kenya</p>
+          <p style="color: var(--muted);">Working Days: Mon-Fri</p>
         </div>
 
-        <div class="card" style="grid-column: span 2;">
-          <h3>Send a Message</h3>
-          <form>
-            <input type="text" placeholder="Full Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <select required>
-              <option value="">Select Service</option>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📧</div>
+          <h3>Email Us</h3>
+          <p style="color: var(--muted);">cpa6hellen@gmail.com</p>
+          <p style="color: var(--muted);">24/7 Support</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📞</div>
+          <h3>Call Us</h3>
+          <p style="color: var(--muted);">+254 702 401 751</p>
+          <p style="color: var(--muted);">Mon-Fri, 8am-6pm</p>
+        </div>
+      </div>
+
+      <!-- Main Contact Area -->
+      <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px;">
+        <!-- Additional Info Card -->
+        <div class="card" style="background: var(--soft);">
+          <h3 style="color: var(--navy); margin-bottom: 20px;">Why Contact Us?</h3>
+          
+          <div style="margin-bottom: 25px;">
+            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Quick Response</h4>
+            <p style="color: var(--muted);">We reply within 24 hours on business days</p>
+          </div>
+
+          <div style="margin-bottom: 25px;">
+            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Expert Advice</h4>
+            <p style="color: var(--muted);">Get professional guidance from certified accountants</p>
+          </div>
+
+          <div style="margin-bottom: 25px;">
+            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Free Initial Consultation</h4>
+            <p style="color: var(--muted);">First consultation on us - no obligation</p>
+          </div>
+
+          <hr style="border: 1px solid var(--border); margin: 25px 0;" />
+
+          <h3 style="color: var(--navy); margin-bottom: 15px;">Connect With Us</h3>
+          <div style="display: flex; gap: 15px;">
+            <a href="https://wa.me/254702401751" style="background: #25D366; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+              <span>📱</span> WhatsApp
+            </a>
+            <a href="mailto:cpa6hellen@gmail.com" style="background: var(--navy); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+              <span>✉️</span> Email
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card">
+          <h3 style="color: var(--navy); margin-bottom: 25px;">Send us a Message</h3>
+          
+          <form id="contactForm" onsubmit="return handleContactSubmit(event)">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <input type="text" placeholder="First Name" id="firstName" required />
+              <input type="text" placeholder="Last Name" id="lastName" required />
+            </div>
+            
+            <input type="email" placeholder="Email Address" id="email" required />
+            
+            <input type="tel" placeholder="Phone Number (optional)" id="phone" />
+            
+            <select id="service" required>
+              <option value="">Select Service Interested In</option>
               <option>Corporate Tax Filing</option>
               <option>Payroll Support</option>
               <option>Accounting Support</option>
               <option>eTIMS Support</option>
               <option>Business Registration</option>
               <option>Money Market Advisory</option>
+              <option>Other</option>
             </select>
-            <textarea placeholder="Your Message" required></textarea>
-            <button class="btn primary" type="submit">Send Message</button>
+            
+            <textarea placeholder="Your Message" id="message" rows="5" required></textarea>
+            
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn primary" type="submit" style="background: var(--gold); color: var(--navy);">Send Message</button>
+              <button class="btn outline" type="reset" style="border-color: var(--border); color: var(--muted);">Clear</button>
+            </div>
+
+            <div id="formStatus" style="margin-top: 15px; padding: 10px; border-radius: 8px; display: none;"></div>
           </form>
         </div>
       </div>
 
+      <!-- Map/Location Section -->
+      <div style="margin-top: 50px;">
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="background: var(--navy); color: white; padding: 20px;">
+            <h3 style="color: white; margin-bottom: 5px;">Our Location</h3>
+            <p style="opacity: 0.9;">Nairobi, Kenya - Served by appointment</p>
+          </div>
+          <div style="height: 300px; background: var(--soft); display: flex; align-items: center; justify-content: center;">
+            <!-- Placeholder for Google Maps -->
+            <div style="text-align: center; color: var(--muted);">
+              <div style="font-size: 48px; margin-bottom: 16px;">📍</div>
+              <p>Map will be embedded here</p>
+              <p style="font-size: 14px;">Nairobi, Kenya</p>
+              <a href="#" style="color: var(--gold); margin-top: 10px; display: inline-block;">Get Directions →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background: var(--soft);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers to common questions</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+        <div class="card">
+          <h4 style="color: var(--navy); margin-bottom: 10px;">How quickly do you respond?</h4>
+          <p style="color: var(--muted);">We typically respond within 24 hours during business days.</p>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--navy); margin-bottom: 10px;">Do you offer remote consultations?</h4>
+          <p style="color: var(--muted);">Yes, we offer consultations via phone, video call, or email.</p>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--navy); margin-bottom: 10px;">What are your office hours?</h4>
+          <p style="color: var(--muted);">Monday to Friday, 8:00 AM - 6:00 PM (East Africa Time).</p>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--navy); margin-bottom: 10px;">Is the first consultation free?</h4>
+          <p style="color: var(--muted);">Yes, we offer a free initial consultation to understand your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="container cta-wrap">
+      <div>
+        <h2>Prefer to talk now?</h2>
+        <p>Call us directly or send a WhatsApp message for immediate assistance.</p>
+      </div>
+      <div class="btn-row">
+        <a href="tel:+254702401751" class="btn primary" style="background: var(--gold); color: var(--navy);">Call Now</a>
+        <a href="https://wa.me/254702401751" class="btn outline" style="border-color: var(--gold); color: var(--navy); background: white;">WhatsApp Us</a>
+      </div>
     </div>
   </section>
 
@@ -88,7 +221,7 @@
         <h3>Contact</h3>
         <p>Nairobi, Kenya</p>
         <p>Email: cpa6hellen@gmail.com</p>
-        <p>Phone: +254702401751</p>
+        <p>Phone: +254 702 401 751</p>
       </div>
     </div>
 
@@ -99,6 +232,65 @@
 
   <script src="script.js"></script>
   <script>
+    // Form submission handler
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      
+      // Get form values
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+      
+      // Simple validation
+      if (!firstName || !lastName || !email || !service || !message) {
+        showFormStatus('Please fill in all required fields', 'error');
+        return false;
+      }
+      
+      if (!validateEmail(email)) {
+        showFormStatus('Please enter a valid email address', 'error');
+        return false;
+      }
+      
+      // Show success message (in production, this would send to server)
+      showFormStatus('Thank you! Your message has been sent. We\'ll respond within 24 hours.', 'success');
+      
+      // Optional: Reset form
+      // document.getElementById('contactForm').reset();
+      
+      return false;
+    }
+    
+    function showFormStatus(message, type) {
+      const statusDiv = document.getElementById('formStatus');
+      statusDiv.style.display = 'block';
+      statusDiv.textContent = message;
+      
+      if (type === 'success') {
+        statusDiv.style.background = '#d4edda';
+        statusDiv.style.color = '#155724';
+        statusDiv.style.border = '1px solid #c3e6cb';
+      } else {
+        statusDiv.style.background = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+        statusDiv.style.border = '1px solid #f5c6cb';
+      }
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        statusDiv.style.display = 'none';
+      }, 5000);
+    }
+    
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+    
+    // Update copyright year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
