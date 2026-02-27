@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding eTIMS: Complete Guide for Kenyan Businesses | Hellen & Associates</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Blog Post Specific Styles */
+    .blog-post {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .blog-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .blog-header h1 {
+      font-size: 42px;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    
+    .blog-meta {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    
+    .blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .featured-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, var(--navy), #1d4ed8);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .featured-image span {
+      font-size: 120px;
+      opacity: 0.2;
+      position: absolute;
+    }
+    
+    .featured-image .main-icon {
+      font-size: 80px;
+      opacity: 1;
+      color: var(--gold);
+      z-index: 2;
+    }
+    
+    .blog-content {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    
+    .blog-content h2 {
+      color: var(--navy);
+      font-size: 32px;
+      margin: 50px 0 25px;
+    }
+    
+    .blog-content h3 {
+      color: var(--navy);
+      font-size: 24px;
+      margin: 35px 0 20px;
+    }
+    
+    .blog-content p {
+      margin-bottom: 25px;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin-bottom: 25px;
+      padding-left: 20px;
+    }
+    
+    .blog-content li {
+      margin-bottom: 10px;
+    }
+    
+    .info-box {
+      background: var(--soft);
+      border-left: 4px solid var(--gold);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    
+    .info-box h4 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .tip-box {
+      background: #fff7dd;
+      border: 1px solid var(--gold);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    
+    .tip-box h4 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .table-of-contents {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .table-of-contents h3 {
+      margin-top: 0;
+    }
+    
+    .table-of-contents ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .table-of-contents li {
+      margin-bottom: 8px;
+    }
+    
+    .table-of-contents a {
+      color: var(--navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .table-of-contents a:hover {
+      color: var(--gold);
+    }
+    
+    .table-of-contents a:before {
+      content: "→";
+      color: var(--gold);
+    }
+    
+    .step-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 20px 0;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    
+    .step-content {
+      flex: 1;
+    }
+    
+    .step-content h4 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .download-card {
+      background: linear-gradient(135deg, var(--navy), #1d4ed8);
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 50px 0;
+    }
+    
+    .download-card h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .download-card p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 25px;
+    }
+    
+    .author-bio {
+      background: var(--soft);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 50px 0;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+    
+    .author-avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+    
+    .author-info h3 {
+      margin-bottom: 10px;
+    }
+    
+    .author-info p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    
+    .share-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    
+    .share-btn:hover {
+      transform: translateY(-3px);
+    }
+    
+    .share-btn.facebook { background: #1877f2; }
+    .share-btn.twitter { background: #1da1f2; }
+    .share-btn.linkedin { background: #0077b5; }
+    .share-btn.whatsapp { background: #25D366; }
+    
+    .related-posts {
+      margin-top: 60px;
+    }
+    
+    .related-posts h3 {
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-header h1 {
+        font-size: 32px;
+      }
+      
+      .blog-meta {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      
+      .table-of-contents ul {
+        grid-template-columns: 1fr;
+      }
+      
+      .step-card {
+        flex-direction: column;
+      }
+      
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .featured-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand">Hellen <span>& Associates</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- Blog Post Content -->
+  <section class="section" style="padding: 60px 0;">
+    <div class="container blog-post">
+      
+      <!-- Back to Blog -->
+      <a href="../blog.html" style="display: inline-flex; align-items: center; gap: 8px; color: var(--gold); margin-bottom: 30px; text-decoration: none;">
+        ← Back to Blog
+      </a>
+
+      <!-- Blog Header -->
+      <div class="blog-header">
+        <span class="badge" style="background: var(--gold); color: var(--navy); margin-bottom: 20px;">eTIMS Guide</span>
+        <h1>Understanding eTIMS: A Complete Guide for Kenyan Businesses</h1>
+        
+        <div class="blog-meta">
+          <span>📅 March 15, 2024</span>
+          <span>⏱ 8 min read</span>
+          <span>👤 James Mwangi</span>
+          <span>📋 Category: eTIMS</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="featured-image">
+        <span>💻</span>
+        <span class="main-icon">📊</span>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="table-of-contents">
+        <h3>📖 Table of Contents</h3>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#what-is-etims">What is eTIMS?</a></li>
+          <li><a href="#who-needs-etims">Who Needs to Register?</a></li>
+          <li><a href="#registration-process">Registration Process</a></li>
+          <li><a href="#integration">Integration Options</a></li>
+          <li><a href="#compliance">Daily Compliance</a></li>
+          <li><a href="#common-issues">Common Issues & Solutions</a></li>
+          <li><a href="#penalties">Penalties for Non-Compliance</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+      </div>
+
+      <!-- Blog Content -->
+      <div class="blog-content">
+        
+        <section id="introduction">
+          <h2>Introduction</h2>
+          <p>
+            The Kenya Revenue Authority (KRA) has revolutionized tax compliance with the introduction of the 
+            <strong>Electronic Tax Invoice Management System (eTIMS)</strong>. This system represents a significant 
+            shift from traditional invoicing methods to a real-time, digital-first approach to tax reporting.
+          </p>
+          <p>
+            Whether you're a small business owner just hearing about eTIMS or an established enterprise looking 
+            to optimize your compliance, this comprehensive guide will walk you through everything you need to know.
+          </p>
+        </section>
+
+        <div class="info-box">
+          <h4>📌 Key Takeaway</h4>
+          <p>eTIMS is mandatory for all VAT-registered taxpayers in Kenya. Non-compliance can result in penalties of up to KES 1,000,000 or imprisonment for up to 3 years.</p>
+        </div>
+
+        <section id="what-is-etims">
+          <h2>What is eTIMS?</h2>
+          <p>
+            eTIMS (Electronic Tax Invoice Management System) is KRA's digital platform for generating, storing, 
+            and managing tax invoices in real-time. It replaces the old method of generating invoices and waiting 
+            until filing time to report sales.
+          </p>
+          
+          <h3>Key Features of eTIMS:</h3>
+          <ul>
+            <li><strong>Real-time Reporting:</strong> Sales data is transmitted to KRA immediately upon invoice generation</li>
+            <li><strong>Automated VAT Returns:</strong> System automatically populates VAT returns based on issued invoices</li>
+            <li><strong>Digital Record Keeping:</strong> All invoices are stored securely in the cloud</li>
+            <li><strong>Integration Capabilities:</strong> Can integrate with existing POS and ERP systems</li>
+            <li><strong>Mobile Accessibility:</strong> Generate invoices via smartphone using the eTIMS mobile app</li>
+          </ul>
+        </section>
+
+        <section id="who-needs-etims">
+          <h2>Who Needs to Register for eTIMS?</h2>
+          <p>The following taxpayers are required by law to use eTIMS:</p>
+          
+          <ul>
+            <li>All VAT-registered persons (both individuals and companies)</li>
+            <li>Businesses with annual turnover exceeding KES 5 million</li>
+            <li>Taxpayers who voluntarily wish to use the system for easier compliance</li>
+          </ul>
+
+          <div class="tip-box">
+            <h4>💡 Pro Tip</h4>
+            <p>Even if you're not VAT-registered, consider voluntary eTIMS registration. It simplifies record-keeping and prepares your business for growth and future compliance requirements.</p>
+          </div>
+        </section>
+
+        <section id="registration-process">
+          <h2>eTIMS Registration Process</h2>
+          
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Login to iTax</h4>
+              <p>Access your iTax account at itax.kra.go.ke using your KRA PIN and password.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Navigate to eTIMS Menu</h4>
+              <p>Go to the "Returns" menu and select "eTIMS Registration" from the dropdown options.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Choose Registration Type</h4>
+              <p>Select either "New Registration" or "Migration from Old System" depending on your status.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Complete the Form</h4>
+              <p>Fill in your business details, including business name, address, and contact information.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Select Integration Method</h4>
+              <p>Choose how you'll connect to eTIMS: Direct integration, web interface, or mobile app.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>Submit and Wait for Approval</h4>
+              <p>Submit your application and wait for KRA approval, which typically takes 2-3 working days.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="integration">
+          <h2>eTIMS Integration Options</h2>
+          
+          <h3>1. Direct API Integration</h3>
+          <p>For businesses with existing ERP or POS systems, direct API integration allows seamless connection between your system and eTIMS. This is the most efficient option for high-volume businesses.</p>
+          
+          <h3>2. Web Interface</h3>
+          <p>KRA provides a web-based portal where you can manually enter invoices. Suitable for businesses with low transaction volumes.</p>
+          
+          <h3>3. Mobile App</h3>
+          <p>The eTIMS mobile app allows you to generate invoices on the go using your smartphone. Perfect for small businesses and mobile service providers.</p>
+          
+          <h3>4. EFD Integration</h3>
+          <p>If you already use an EFD machine, you can integrate it with eTIMS for automatic invoice transmission.</p>
+
+          <div class="info-box">
+            <h4>Integration Support</h4>
+            <p>Hellen & Associates provides full eTIMS integration support, including system setup, testing, and staff training. <a href="../contact.html?service=etims" style="color: var(--gold);">Contact us</a> for assistance.</p>
+          </div>
+        </section>
+
+        <section id="compliance">
+          <h2>Daily eTIMS Compliance Requirements</h2>
+          
+          <h3>What You Must Do Daily:</h3>
+          <ul>
+            <li>Generate invoices for all sales before or at the time of transaction</li>
+            <li>Ensure invoices include: KRA PIN, invoice number, date, customer details, item description, quantities, prices, and VAT</li>
+            <li>Transmit invoices to KRA immediately (or within 24 hours for offline scenarios)</li>
+            <li>Keep copies of all issued invoices</li>
+          </ul>
+
+          <h3>What You Must Do Monthly:</h3>
+          <ul>
+            <li>Review the sales summary in your eTIMS dashboard</li>
+            <li>Reconcile eTIMS sales with your internal records</li>
+            <li>File VAT returns by the 20th of the following month</li>
+            <li>Pay any VAT due by the same deadline</li>
+          </ul>
+        </section>
+
+        <section id="common-issues">
+          <h2>Common eTIMS Issues and Solutions</h2>
+          
+          <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 15px;">❌ System Downtime</h4>
+            <p><strong>Solution:</strong> Use offline mode to generate invoices, then sync when system is back online. Always keep backup records.</p>
+          </div>
+
+          <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 15px;">❌ Integration Errors</h4>
+            <p><strong>Solution:</strong> Check API credentials, ensure proper data formatting, and test in sandbox environment first. Contact your developer or our support team.</p>
+          </div>
+
+          <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 15px;">❌ Duplicate Invoices</h4>
+            <p><strong>Solution:</strong> Use the void function immediately if an invoice is generated in error. Keep records of all voided invoices.</p>
+          </div>
+
+          <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 15px;">❌ Slow Performance</h4>
+            <p><strong>Solution:</strong> Check your internet connection, clear browser cache, or try using the mobile app for better performance.</p>
+          </div>
+        </section>
+
+        <section id="penalties">
+          <h2>Penalties for Non-Compliance</h2>
+          
+          <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <ul style="margin: 0;">
+              <li><strong>Failure to register:</strong> KES 100,000 or imprisonment for up to 3 years</li>
+              <li><strong>Late invoice transmission:</strong> KES 10,000 per invoice</li>
+              <li><strong>Incorrect invoices:</strong> KES 20,000 per invoice</li>
+              <li><strong>Failure to keep records:</strong> KES 50,000</li>
+              <li><strong>System tampering:</strong> KES 1,000,000 or imprisonment</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="faqs">
+          <h2>Frequently Asked Questions</h2>
+          
+          <div style="margin: 30px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 10px;">Q: Can I use eTIMS if I'm not VAT registered?</h4>
+            <p>A: Yes, voluntary registration is allowed and recommended for businesses planning to grow.</p>
+          </div>
+
+          <div style="margin: 30px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 10px;">Q: What if I have no sales on a particular day?</h4>
+            <p>A: You don't need to generate any invoices, but you should maintain a "nil sales" record for your own reconciliation.</p>
+          </div>
+
+          <div style="margin: 30px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 10px;">Q: Can I issue manual invoices?</h4>
+            <p>A: No, all invoices must be generated through eTIMS. Manual invoices are not recognized for VAT purposes.</p>
+          </div>
+
+          <div style="margin: 30px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 10px;">Q: How long should I keep eTIMS records?</h4>
+            <p>A: Tax records, including eTIMS invoices, must be kept for at least 5 years.</p>
+          </div>
+
+          <div style="margin: 30px 0;">
+            <h4 style="color: var(--navy); margin-bottom: 10px;">Q: What happens if I lose internet connection?</h4>
+            <p>A: eTIMS has an offline mode. Generate invoices offline, and they will auto-sync when connection is restored.</p>
+          </div>
+        </section>
+
+        <!-- Download Resource -->
+        <div class="download-card">
+          <h3>📥 Download eTIMS Checklist</h3>
+          <p>Get our comprehensive eTIMS implementation checklist with all requirements, deadlines, and best practices.</p>
+          <a href="#" class="btn primary" style="background: var(--gold); color: var(--navy); padding: 15px 40px;">Download Free PDF</a>
+        </div>
+
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            eTIMS represents the future of tax compliance in Kenya. While the transition may seem challenging, 
+            proper understanding and implementation will make your business more efficient and compliant.
+          </p>
+          <p>
+            At Hellen & Associates, we specialize in helping businesses navigate eTIMS requirements. From initial 
+            registration to daily compliance support, our team is here to ensure you never miss a deadline or face penalties.
+          </p>
+        </section>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <div class="author-avatar">JM</div>
+          <div class="author-info">
+            <h3 style="color: var(--navy);">James Mwangi</h3>
+            <p>Senior Tax Consultant at Hellen & Associates. James has 8+ years of experience in tax compliance and eTIMS implementation. He has helped over 200 businesses successfully transition to eTIMS.</p>
+            <a href="#" style="color: var(--gold);">View all posts by James →</a>
+          </div>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="share-buttons">
+          <a href="#" class="share-btn facebook">f</a>
+          <a href="#" class="share-btn twitter">𝕏</a>
+          <a href="#" class="share-btn linkedin">in</a>
+          <a href="#" class="share-btn whatsapp">📱</a>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="related-posts">
+          <h3 style="color: var(--navy);">You Might Also Like</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            
+            <div class="card">
+              <div style="font-size: 40px; margin-bottom: 15px;">🔧</div>
+              <h4 style="color: var(--navy);">eTIMS Troubleshooting Guide</h4>
+              <p style="color: var(--muted);">Common issues and how to resolve them quickly.</p>
+              <a href="etims-troubleshooting.html" style="color: var(--gold);">Read More →</a>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 40px; margin-bottom: 15px;">📱</div>
+              <h4 style="color: var(--navy);">eTIMS Mobile App Guide</h4>
+              <p style="color: var(--muted);">How to use eTIMS on your smartphone.</p>
+              <a href="etims-mobile.html" style="color: var(--gold);">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta" style="background: var(--soft);">
+    <div class="container cta-wrap">
+      <div>
+        <h2 style="color: var(--navy);">Need eTIMS Support?</h2>
+        <p>Get professional assistance with registration, integration, and daily compliance.</p>
+      </div>
+      <div class="btn-row">
+        <a href="../contact.html?service=etims" class="btn primary" style="background: var(--gold); color: var(--navy);">Contact Us Today</a>
+        <a href="https://wa.me/254702401751" class="btn outline" style="border-color: var(--gold); color: var(--navy);">WhatsApp Support</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Hellen & Associates Company</h3>
+        <p>
+          Reliable financial services for tax compliance, payroll support, accounting, business registration,
+          and investment advisory.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="../index.html">Home</a></p>
+        <p><a href="../about.html">About</a></p>
+        <p><a href="../services.html">Services</a></p>
+        <p><a href="../blog.html">Blog</a></p>
+        <p><a href="../contact.html">Contact</a></p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Nairobi, Kenya</p>
+        <p>Email: cpa6hellen@gmail.com</p>
+        <p>Phone: +254 702 401 751</p>
+      </div>
+    </div>
+
+    <div class="container copy">
+      © <span id="year"></span> Hellen & Associates Company. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Smooth scroll for table of contents
+    document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
