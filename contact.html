@@ -254,82 +254,56 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   
   <script>
-    // Initialize EmailJS with your public key
-    (function() {
-      // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-      emailjs.init("YOUR_PUBLIC_KEY"); // Get this from EmailJS dashboard
-    })();
+   const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+const submitBtn = document.getElementById("submitBtn");
 
-    // Handle form submission
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      // Get form elements
-      const submitBtn = document.getElementById('submitBtn');
-      const formStatus = document.getElementById('formStatus');
-      const originalBtnText = submitBtn.textContent;
-      
-      // Validate phone number (simple validation)
-      const phone = document.getElementById('phone').value;
-      if (phone.length < 10) {
-        formStatus.className = 'form-status error';
-        formStatus.textContent = 'Please enter a valid phone number';
-        return;
-      }
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      formStatus.className = 'form-status loading';
-      formStatus.textContent = 'Sending your message...';
-      
-      // Prepare template parameters
-      const templateParams = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value,
-        to_email: 'cpa6hellen@gmail.com'
-      };
-      
-      // Replace these with your actual EmailJS credentials
-      // Get them from: https://dashboard.emailjs.com
-      const serviceId = 'YOUR_SERVICE_ID';      // Create a service in EmailJS
-      const templateId = 'YOUR_TEMPLATE_ID';    // Create an email template
-      
-      // Send email using EmailJS
-      emailjs.send(serviceId, templateId, templateParams)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          
-          // Show success message
-          formStatus.className = 'form-status success';
-          formStatus.textContent = '✓ Thank you! Your message has been sent successfully. We\'ll respond within 24 hours.';
-          
-          // Reset form
-          document.getElementById('contactForm').reset();
-          
-          // Reset button
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalBtnText;
-        })
-        .catch(function(error) {
-          console.log('FAILED...', error);
-          
-          // Show error message
-          formStatus.className = 'form-status error';
-          formStatus.textContent = '❌ Failed to send message. Please try again or contact us directly via phone or WhatsApp.';
-          
-          // Reset button
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalBtnText;
-        });
-    });
+async function handleSubmit(event) {
+  event.preventDefault();
+  
+  // Show loading state
+  status.innerHTML = "Sending...";
+  status.className = "form-status loading";
+  submitBtn.disabled = true;
 
-    // Update copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const data = new FormData(event.target);
+
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      // Success!
+      status.innerHTML = "✓ Success! We have received your message.";
+      status.className = "form-status success";
+      form.reset(); // Clear the form
+    } else {
+      // Server error
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+        } else {
+          status.innerHTML = "Oops! There was a problem submitting your form";
+        }
+      })
+      status.className = "form-status error";
+    }
+  }).catch(error => {
+    // Network error
+    status.innerHTML = "Oops! Network error. Please check your connection.";
+    status.className = "form-status error";
+  }).finally(() => {
+    submitBtn.disabled = false;
+  });
+}
+
+form.addEventListener("submit", handleSubmit);
+
+// Update copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
