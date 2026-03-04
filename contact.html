@@ -6,35 +6,23 @@
   <title>Contact Us | Hellen Global Consultants</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Form status styles */
-    .form-status {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      display: none;
-      text-align: center;
-      font-weight: 500;
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
     }
     
-    .form-status.success {
+    .success-message {
+      text-align: center;
+      padding: 40px 20px;
       background: #d4edda;
       color: #155724;
-      border: 1px solid #c3e6cb;
-      display: block;
+      border-radius: 8px;
+      display: none;
     }
     
-    .form-status.error {
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
-      display: block;
-    }
-    
-    .form-status.loading {
-      background: #fff3cd;
-      color: #856404;
-      border: 1px solid #ffeeba;
-      display: block;
+    .success-message h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
     
     .btn:disabled {
@@ -45,56 +33,6 @@
 </head>
 <body>
 
-<?php
-// Process the form when submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Get and clean form data
-    $firstName = strip_tags(trim($_POST['firstName']));
-    $lastName = strip_tags(trim($_POST['lastName']));
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-    $service = strip_tags(trim($_POST['service']));
-    $message = strip_tags(trim($_POST['message']));
-    
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $formStatus = "error";
-        $formMessage = "Please enter a valid email address.";
-    } 
-    // Check required fields
-    elseif (empty($firstName) || empty($lastName) || empty($service) || empty($message)) {
-        $formStatus = "error";
-        $formMessage = "Please fill in all required fields.";
-    } 
-    else {
-        // Email details
-        $to = "info@hellenglobalconsultants.co.ke";
-        $subject = "New Contact Form: $service";
-        
-        // Email content
-        $emailContent = "You have received a new message from your website contact form.\n\n";
-        $emailContent .= "Name: $firstName $lastName\n";
-        $emailContent .= "Email: $email\n";
-        $emailContent .= "Service Interested In: $service\n\n";
-        $emailContent .= "Message:\n$message\n";
-        
-        // Email headers
-        $headers = "From: $email\r\n";
-        $headers .= "Reply-To: $email\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
-        
-        // Send email
-        if (mail($to, $subject, $emailContent, $headers)) {
-            $formStatus = "success";
-            $formMessage = "✓ Thank you! Your message has been sent successfully.";
-        } else {
-            $formStatus = "error";
-            $formMessage = "Oops! Something went wrong. Please try again or email us directly at info@hellenglobalconsultants.co.ke";
-        }
-    }
-}
-?>
-
   <header class="navbar">
     <div class="container nav-wrap">
       <a href="index.html" class="brand"> Hellen <span> Global Consultants </span></a>
@@ -103,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="contact.php" class="active">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
 
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -184,38 +122,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="card">
           <h3 style="color: var(--navy); margin-bottom: 25px;">Send us a Message</h3>
           
-          <?php if (isset($formStatus)): ?>
-            <div class="form-status <?php echo $formStatus; ?>">
-              <?php echo $formMessage; ?>
-            </div>
-          <?php endif; ?>
+          <div id="successMessage" class="success-message">
+            <h3>✓ Thank You!</h3>
+            <p>Your message has been sent successfully. We'll respond within 24 hours.</p>
+            <button onclick="location.reload()" style="margin-top: 15px; padding: 8px 20px; background: var(--navy); color: white; border: none; border-radius: 4px; cursor: pointer;">Send Another Message</button>
+          </div>
           
-          <form id="contactForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <input type="text" placeholder="First Name" id="firstName" name="firstName" value="<?php echo isset($_POST['firstName']) ? htmlspecialchars($_POST['firstName']) : ''; ?>" required />
-              <input type="text" placeholder="Last Name" id="lastName" name="lastName" value="<?php echo isset($_POST['lastName']) ? htmlspecialchars($_POST['lastName']) : ''; ?>" required />
-            </div>
-            
-            <input type="email" placeholder="Email Address" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" required />
-            
-            <select id="service" name="service" required>
-              <option value="">Select Service Interested In</option>
-              <option value="Corporate Tax Filing" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Corporate Tax Filing') ? 'selected' : ''; ?>>Corporate Tax Filing</option>
-              <option value="Payroll Support" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Payroll Support') ? 'selected' : ''; ?>>Payroll Support</option>
-              <option value="Accounting Support" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Accounting Support') ? 'selected' : ''; ?>>Accounting Support</option>
-              <option value="eTIMS Support" <?php echo (isset($_POST['service']) && $_POST['service'] == 'eTIMS Support') ? 'selected' : ''; ?>>eTIMS Support</option>
-              <option value="Business Registration" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Business Registration') ? 'selected' : ''; ?>>Business Registration</option>
-              <option value="Money Market Advisory" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Money Market Advisory') ? 'selected' : ''; ?>>Money Market Advisory</option>
-              <option value="Other" <?php echo (isset($_POST['service']) && $_POST['service'] == 'Other') ? 'selected' : ''; ?>>Other</option>
-            </select>
-            
-            <textarea placeholder="Your Message" id="message" name="message" rows="5" required><?php echo isset($_POST['message']) ? htmlspecialchars($_POST['message']) : ''; ?></textarea>
-            
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <button class="btn primary" type="submit" id="submitBtn" style="background: var(--gold); color: var(--navy);">Send Message</button>
-              <button class="btn outline" type="reset">Clear</button>
-            </div>
-          </form>
+          <div class="form-container" id="contactFormContainer">
+            <form 
+              id="contactForm"
+              target="hidden_iframe"
+              action="https://docs.google.com/forms/d/e/YOUR-FORM-ID-HERE/formResponse"
+              method="POST"
+            >
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <input type="text" placeholder="First Name" name="entry.123456789" required />
+                <input type="text" placeholder="Last Name" name="entry.987654321" required />
+              </div>
+              
+              <input type="email" placeholder="Email Address" name="entry.456789123" required />
+              
+              <select name="entry.789123456" required>
+                <option value="">Select Service Interested In</option>
+                <option value="Corporate Tax Filing">Corporate Tax Filing</option>
+                <option value="Payroll Support">Payroll Support</option>
+                <option value="Accounting Support">Accounting Support</option>
+                <option value="eTIMS Support">eTIMS Support</option>
+                <option value="Business Registration">Business Registration</option>
+                <option value="Money Market Advisory">Money Market Advisory</option>
+                <option value="Other">Other</option>
+              </select>
+              
+              <textarea placeholder="Your Message" name="entry.654321987" rows="5" required></textarea>
+              
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <button class="btn primary" type="submit" id="submitBtn" style="background: var(--gold); color: var(--navy);">Send Message</button>
+                <button class="btn outline" type="reset">Clear</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -281,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
         <p><a href="services.html">Services</a></p>
-        <p><a href="contact.php">Contact</a></p>
+        <p><a href="contact.html">Contact</a></p>
       </div>
 
       <div>
@@ -297,11 +242,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </footer>
 
+  <!-- Hidden iframe to prevent redirect -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
+
   <script src="script.js"></script>
   
   <script>
     // Update copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      // Don't prevent default - we want the form to submit to Google
+      
+      // Disable submit button
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('submitBtn').textContent = 'Sending...';
+      
+      // After form submits, show success message
+      setTimeout(function() {
+        document.getElementById('contactFormContainer').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+      }, 1000);
+    });
   </script>
 
 </body>
