@@ -4,86 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Hellen Global Consultants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="navbar">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand">Hellen <span>Global Consultants</span></a>
+      <a href="index.html" class="brand">
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="globeGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#8a6a1f"/>
+            </linearGradient>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8C96A" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.4"/>
+            </linearGradient>
+          </defs>
+          <circle cx="22" cy="22" r="21" stroke="url(#ringGrad)" stroke-width="1.2" fill="none"/>
+          <circle cx="22" cy="22" r="17" fill="#0D1B2E" stroke="url(#globeGrad)" stroke-width="1.5"/>
+          <ellipse cx="22" cy="22" rx="17" ry="7" stroke="url(#globeGrad)" stroke-width="0.8" fill="none" stroke-opacity="0.35"/>
+          <line x1="22" y1="5" x2="22" y2="39" stroke="url(#globeGrad)" stroke-width="0.7" stroke-opacity="0.3"/>
+          <path d="M6.5 17 Q22 14 37.5 17" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <path d="M6.5 27 Q22 30 37.5 27" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <text x="22" y="26.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="11" fill="#C9A84C" letter-spacing="1.5">HGC</text>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-name">Hellen <span>Global</span></span>
+          <span class="logo-consultants">Consultants</span>
+          <div class="logo-divider"></div>
+          <span class="logo-sub">Bookkeeping &nbsp;·&nbsp; Tax &nbsp;·&nbsp; Advisory</span>
+        </div>
+      </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
 
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </div>
   </header>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HC1YJW9B9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1HC1YJW9B9');
-</script>
 
   <!-- Page Header -->
-  <section class="page-header" style="background: linear-gradient(135deg, var(--navy) 0%, #1d4ed8 100%); color: white; padding: 60px 0; text-align: center;">
+  <section class="page-header">
+    <div class="grid-lines"></div>
     <div class="container">
-      <h1 style="font-size: 48px; margin-bottom: 16px;">Our Services</h1>
-      <p style="font-size: 18px; max-width: 700px; margin: 0 auto; opacity: 0.9;">Professional financial solutions designed to reduce your workload and keep you compliant</p>
+      <div class="eyebrow" style="justify-content: center;">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Our Services</span>
+        <div class="eyebrow-line"></div>
+      </div>
+      <h1>Professional <em>Financial Solutions</em></h1>
+      <p>Designed to reduce your workload and keep you compliant</p>
     </div>
   </section>
 
   <!-- Services Grid -->
-  <section class="section services-full">
+  <section class="section">
     <div class="container">
       
-      <!-- Tax Services -->
+      <!-- Tax & Compliance -->
       <div class="service-category">
         <h2>Tax & Compliance</h2>
-        <div class="grid-3">
+        <div class="services-grid">
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">📋</span>
-            </div>
+            <div class="service-icon-large">📋</div>
             <h3>Corporate Tax Filing</h3>
             <p>We handle preparation and filing of corporate tax returns, compliance review, and timely submission to KRA.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ Income tax returns</li>
-              <li style="margin-bottom: 8px;">✓ VAT returns</li>
-              <li style="margin-bottom: 8px;">✓ Compliance checks</li>
+            <ul>
+              <li>Income tax returns</li>
+              <li>VAT returns</li>
+              <li>Compliance checks</li>
+              <li>Tax planning</li>
             </ul>
+            <div class="badge">Tax</div>
           </div>
 
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">💼</span>
-            </div>
+            <div class="service-icon-large">💼</div>
             <h3>Payroll Support</h3>
             <p>Complete payroll processing, PAYE computation, statutory deductions, and monthly reporting support.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ PAYE, NSSF, SHIF</li>
-              <li style="margin-bottom: 8px;">✓ Monthly payroll reports</li>
+            <ul>
+              <li>PAYE, NSSF, SHIF</li>
+              <li>Monthly payroll reports</li>
+              <li>P9 forms</li>
+              <li>Statutory returns</li>
             </ul>
+            <div class="badge">Payroll</div>
           </div>
 
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">📊</span>
-            </div>
+            <div class="service-icon-large">📊</div>
             <h3>eTIMS Support</h3>
             <p>Onboarding, setup, troubleshooting, compliance guidance, and staff training for eTIMS users.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ System setup</li>
-              <li style="margin-bottom: 8px;">✓ Invoice management</li>
-              <li style="margin-bottom: 8px;">✓ Staff training</li>
+            <ul>
+              <li>System setup</li>
+              <li>Invoice management</li>
+              <li>Staff training</li>
+              <li>Compliance audits</li>
             </ul>
+            <div class="badge">eTIMS</div>
           </div>
         </div>
       </div>
@@ -91,52 +117,94 @@
       <!-- Accounting & Business -->
       <div class="service-category">
         <h2>Accounting & Business</h2>
-        <div class="grid-3">
+        <div class="services-grid">
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">📝</span>
-            </div>
+            <div class="service-icon-large">📝</div>
             <h3>Accounting Support</h3>
             <p>Bookkeeping, reconciliations, financial statements preparation, and accounting advisory.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ Monthly bookkeeping</li>
-              <li style="margin-bottom: 8px;">✓ Financial statements</li>
-              <li style="margin-bottom: 8px;">✓ Management reports</li>
+            <ul>
+              <li>Monthly bookkeeping</li>
+              <li>Financial statements</li>
+              <li>Management reports</li>
+              <li>Bank reconciliations</li>
             </ul>
+            <div class="badge">Accounting</div>
           </div>
 
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">🏢</span>
-            </div>
+            <div class="service-icon-large">🏢</div>
             <h3>Business Registration</h3>
             <p>Company registration, KRA PIN updates, CR12 support, and business compliance advisory.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ Company incorporation</li>
-              <li style="margin-bottom: 8px;">✓ Business permits</li>
-              <li style="margin-bottom: 8px;">✓ CR12 retrieval</li>
+            <ul>
+              <li>Company incorporation</li>
+              <li>Business permits</li>
+              <li>CR12 retrieval</li>
+              <li>KRA PIN registration</li>
             </ul>
+            <div class="badge">Business</div>
           </div>
 
           <div class="card service-card">
-            <div class="service-icon" style="background: #fff7dd; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-              <span style="font-size: 24px;">💰</span>
-            </div>
+            <div class="service-icon-large">💰</div>
             <h3>Money Market Advisory</h3>
             <p>Advisory on money market funds, savings strategies, and low-risk investment planning.</p>
-            <ul style="margin-top: 16px; list-style: none; color: var(--muted);">
-              <li style="margin-bottom: 8px;">✓ Investment planning</li>
-              <li style="margin-bottom: 8px;">✓ Fund selection</li>
-              <li style="margin-bottom: 8px;">✓ Risk assessment</li>
+            <ul>
+              <li>Investment planning</li>
+              <li>Fund selection</li>
+              <li>Risk assessment</li>
+              <li>Portfolio reviews</li>
             </ul>
+            <div class="badge">Investment</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Services -->
+      <div class="service-category">
+        <h2>Additional Support</h2>
+        <div class="services-grid">
+          <div class="card service-card">
+            <div class="service-icon-large">🔍</div>
+            <h3>Tax Health Checks</h3>
+            <p>Comprehensive review of your tax compliance status and identification of potential risks.</p>
+            <ul>
+              <li>Compliance audits</li>
+              <li>Risk assessment</li>
+              <li>Remediation plans</li>
+            </ul>
+            <div class="badge">Advisory</div>
+          </div>
+
+          <div class="card service-card">
+            <div class="service-icon-large">📈</div>
+            <h3>Financial Forecasting</h3>
+            <p>Budgeting, cash flow projections, and financial planning for business growth.</p>
+            <ul>
+              <li>Cash flow forecasts</li>
+              <li>Budget preparation</li>
+              <li>Growth planning</li>
+            </ul>
+            <div class="badge">Planning</div>
+          </div>
+
+          <div class="card service-card">
+            <div class="service-icon-large">⚖️</div>
+            <h3>KRA Audit Support</h3>
+            <p>Representation and support during KRA audits and investigations.</p>
+            <ul>
+              <li>Audit representation</li>
+              <li>Document preparation</li>
+              <li>Response management</li>
+            </ul>
+            <div class="badge">Compliance</div>
           </div>
         </div>
       </div>
 
       <!-- Pricing Info -->
-      <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--soft); border-radius: 20px;">
-        <h3 style="font-size: 28px; margin-bottom: 16px; color: var(--navy);">Transparent & Competitive Pricing</h3>
-        <p style="font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 24px;">Contact us for a personalized quote based on your business needs.</p>
+      <div class="pricing-card card" style="text-align: center; margin-top: 3rem;">
+        <h3>Transparent & Competitive Pricing</h3>
+        <p>Contact us for a personalized quote based on your business needs.</p>
         <a href="contact.html" class="btn primary" style="background: var(--gold); color: var(--navy);">Get a Free Consultation</a>
       </div>
 
@@ -144,30 +212,34 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section class="section" style="background: var(--navy); color: white;">
+  <section class="section" style="background: #091422;">
     <div class="container">
       <div class="section-title">
-        <h2 style="color: white;">Why Businesses Trust Us</h2>
-        <p style="color: rgba(255,255,255,0.8);">We combine expertise with personalized service</p>
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Why Trust Us</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>Why Businesses <em>Trust Us</em></h2>
       </div>
 
       <div class="grid-3">
         <div style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
-          <h3 style="color: white; margin-bottom: 8px;">10+ Years Experience</h3>
-          <p style="color: rgba(255,255,255,0.7);">Certified professionals with extensive industry knowledge</p>
+          <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">10+ Years Experience</h3>
+          <p style="color: var(--muted);">Certified professionals with extensive industry knowledge</p>
         </div>
 
         <div style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
-          <h3 style="color: white; margin-bottom: 8px;">500+ Clients Served</h3>
-          <p style="color: rgba(255,255,255,0.7);">Trusted by SMEs and corporations across Kenya</p>
+          <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">500+ Clients Served</h3>
+          <p style="color: var(--muted);">Trusted by SMEs and corporations across Kenya</p>
         </div>
 
         <div style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
-          <h3 style="color: white; margin-bottom: 8px;">24/7 Support</h3>
-          <p style="color: rgba(255,255,255,0.7);">Always available when you need us</p>
+          <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">24/7 Support</h3>
+          <p style="color: var(--muted);">Always available when you need us</p>
         </div>
       </div>
     </div>
@@ -182,7 +254,7 @@
       </div>
       <div class="btn-row">
         <a href="contact.html" class="btn primary">Contact Us Today</a>
-        <a href="https://wa.me/254702401751" class="btn outline" style="border-color: var(--gold); color: var(--navy); background: white;">WhatsApp Us</a>
+        <a href="https://wa.me/254702401751" class="btn outline">WhatsApp Us</a>
       </div>
     </div>
   </section>
@@ -193,7 +265,7 @@
         <h3>Hellen Global Consultants</h3>
         <p>
           Reliable financial services for tax compliance, payroll support, accounting, business registration,
-          and investment advisory.
+          and investment advisory. Trusted by 500+ businesses across Kenya.
         </p>
       </div>
 
@@ -202,19 +274,20 @@
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
         <p><a href="services.html">Services</a></p>
+        <p><a href="resources.html">Resources</a></p>
         <p><a href="contact.html">Contact</a></p>
       </div>
 
       <div>
         <h3>Contact</h3>
         <p>Nairobi, Kenya</p>
-        <p>Email: cpa6hellen@gmail.com</p>
+        <p>Email: hellenglobalconsultants.co.ke</p>
         <p>Phone: +254 702 401 751</p>
       </div>
     </div>
 
     <div class="container copy">
-      © <span id="year"></span> Hellen Global Consultants(H.G.C). All rights reserved.
+      © <span id="year"></span> Hellen Global Consultants (H.G.C). All rights reserved.
     </div>
   </footer>
 
