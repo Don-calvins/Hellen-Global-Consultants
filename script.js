@@ -39,9 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 10) {
-    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    navbar.style.borderBottom = '1px solid rgba(201,168,76,0.15)';
   } else {
     navbar.style.boxShadow = 'none';
+    navbar.style.borderBottom = '1px solid rgba(201,168,76,0.15)';
   }
 });
 
