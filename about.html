@@ -3,40 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Global Hellen Consultants</title>
+  <title>About Us | Hellen Global Consultants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HC1YJW9B9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1HC1YJW9B9');
-</script>
 <body>
 
   <header class="navbar">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand">Hellen <span>Global Consultants</span></a>
+      <a href="index.html" class="brand">
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="globeGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#8a6a1f"/>
+            </linearGradient>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8C96A" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.4"/>
+            </linearGradient>
+          </defs>
+          <circle cx="22" cy="22" r="21" stroke="url(#ringGrad)" stroke-width="1.2" fill="none"/>
+          <circle cx="22" cy="22" r="17" fill="#0D1B2E" stroke="url(#globeGrad)" stroke-width="1.5"/>
+          <ellipse cx="22" cy="22" rx="17" ry="7" stroke="url(#globeGrad)" stroke-width="0.8" fill="none" stroke-opacity="0.35"/>
+          <line x1="22" y1="5" x2="22" y2="39" stroke="url(#globeGrad)" stroke-width="0.7" stroke-opacity="0.3"/>
+          <path d="M6.5 17 Q22 14 37.5 17" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <path d="M6.5 27 Q22 30 37.5 27" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <text x="22" y="26.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="11" fill="#C9A84C" letter-spacing="1.5">HGC</text>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-name">Hellen <span>Global</span></span>
+          <span class="logo-consultants">Consultants</span>
+          <div class="logo-divider"></div>
+          <span class="logo-sub">Bookkeeping &nbsp;·&nbsp; Tax &nbsp;·&nbsp; Advisory</span>
+        </div>
+      </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
 
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
   <!-- Page Header -->
-  <section class="hero-about" style="background: linear-gradient(135deg, var(--navy) 0%, #1d4ed8 100%); color: white; padding: 80px 0; text-align: center;">
+  <section class="page-header">
+    <div class="grid-lines"></div>
     <div class="container">
-      <h1 style="font-size: 48px; margin-bottom: 20px;">About Hellen Global Consultants</h1>
-      <p style="font-size: 20px; max-width: 800px; margin: 0 auto; opacity: 0.95;">Your trusted partner in tax compliance, accounting, payroll, and financial advisory since 2015</p>
+      <div class="eyebrow" style="justify-content: center;">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">About Us</span>
+        <div class="eyebrow-line"></div>
+      </div>
+      <h2>Your trusted partner in tax compliance, accounting, payroll, and financial advisory since 2015</h2>
     </div>
   </section>
 
@@ -45,52 +69,52 @@
     <div class="container">
       <div class="about-grid">
         <div>
-          <h2 style="font-size: 36px; color: var(--navy); margin-bottom: 20px;">Who We Are</h2>
-          <p style="font-size: 16px; color: var(--muted); margin-bottom: 20px;">
-            Global Hellen Consultants is a professional financial services firm dedicated to helping businesses and individuals
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--white); margin-bottom: 1.5rem;">Who We Are</h2>
+          <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.8;">
+            Hellen Global Consultants is a professional financial services firm dedicated to helping businesses and individuals
             manage tax reporting, payroll obligations, accounting records, and compliance requirements efficiently.
           </p>
-          <p style="font-size: 16px; color: var(--muted); margin-bottom: 30px;">
-            Founded in 2015, we have grown to become one of Nairobi's most trusted financial advisory firms, serving over 500+
+          <p style="color: var(--muted); margin-bottom: 2rem; font-size: 1rem; line-height: 1.8;">
+            Founded in 2019, we have grown to become one of Nairobi's most trusted financial advisory firms, serving over 500+
             satisfied clients across various industries including retail, manufacturing, professional services, and non-profits.
           </p>
           
-          <div style="display: flex; gap: 30px; margin-top: 30px;">
-            <div>
-              <h3 style="font-size: 32px; color: var(--gold);">500+</h3>
-              <p style="color: var(--muted);">Clients Served</p>
+          <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="stat-item">
+              <div class="stat-num">500+</div>
+              <div class="stat-label">Clients Served</div>
             </div>
-            <div>
-              <h3 style="font-size: 32px; color: var(--gold);">8+</h3>
-              <p style="color: var(--muted);">Years Experience</p>
+            <div class="stat-item">
+              <div class="stat-num">7+</div>
+              <div class="stat-label">Years Experience</div>
             </div>
-            <div>
-              <h3 style="font-size: 32px; color: var(--gold);">15+</h3>
-              <p style="color: var(--muted);">Team Members</p>
+            <div class="stat-item">
+              <div class="stat-num">10+</div>
+              <div class="stat-label">Team Members</div>
             </div>
           </div>
         </div>
         
-        <div class="card" style="background: var(--soft);">
-          <h3 style="color: var(--navy); margin-bottom: 25px;">Our Core Values</h3>
+        <div class="card">
+          <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.5rem;">Our Core Values</h3>
           
-          <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Integrity First</h4>
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--gold); margin-bottom: 0.5rem;">✓ Integrity First</h4>
             <p style="color: var(--muted);">We uphold the highest ethical standards in every client interaction</p>
           </div>
           
-          <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Professional Excellence</h4>
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--gold); margin-bottom: 0.5rem;">✓ Professional Excellence</h4>
             <p style="color: var(--muted);">Continuous learning and certification ensure top-quality service</p>
           </div>
           
-          <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Client Confidentiality</h4>
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--gold); margin-bottom: 0.5rem;">✓ Client Confidentiality</h4>
             <p style="color: var(--muted);">Your financial data is always secure and private</p>
           </div>
           
-          <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--navy); margin-bottom: 8px;">✓ Client Satisfaction</h4>
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--gold); margin-bottom: 0.5rem;">✓ Client Satisfaction</h4>
             <p style="color: var(--muted);">We measure our success by your satisfaction and peace of mind</p>
           </div>
         </div>
@@ -99,22 +123,22 @@
   </section>
 
   <!-- Mission & Vision -->
-  <section class="section" style="background: var(--soft);">
+  <section class="section" style="background: #091422;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+      <div class="grid-2">
         <div class="card" style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 20px;">🎯</div>
-          <h3 style="color: var(--navy); font-size: 28px; margin-bottom: 15px;">Our Mission</h3>
-          <p style="color: var(--muted); font-size: 16px; line-height: 1.8;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+          <h3 style="color: var(--white); font-size: 1.8rem; margin-bottom: 1rem;">Our Mission</h3>
+          <p style="color: var(--muted); line-height: 1.8;">
             To deliver accurate, reliable, and client-focused financial solutions that help our clients remain compliant, 
             reduce administrative burden, and grow sustainably in an ever-changing regulatory environment.
           </p>
         </div>
 
         <div class="card" style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 20px;">👁️</div>
-          <h3 style="color: var(--navy); font-size: 28px; margin-bottom: 15px;">Our Vision</h3>
-          <p style="color: var(--muted); font-size: 16px; line-height: 1.8;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">👁️</div>
+          <h3 style="color: var(--white); font-size: 1.8rem; margin-bottom: 1rem;">Our Vision</h3>
+          <p style="color: var(--muted); line-height: 1.8;">
             To become East Africa's leading tax and accounting support firm, recognized for excellence, integrity, 
             and innovative solutions that empower businesses to thrive.
           </p>
@@ -127,7 +151,12 @@
   <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>Meet Our Leadership Team</h2>
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Our Team</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>Meet Our <em>Leadership Team</em></h2>
         <p>Experienced professionals dedicated to your financial success</p>
       </div>
 
@@ -135,129 +164,59 @@
         <!-- Team Member 1 -->
         <div class="team-card">
           <div class="team-avatar">H</div>
-          <h3 style="color: var(--navy); margin-bottom: 5px;">Hellen Omondi</h3>
-          <p style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">Founder & Lead Consultant</p>
-          <p style="color: var(--muted); font-size: 14px;">CPA, KRA Registered Tax Agent. 6+ years experience in tax and accounting.</p>
-          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
-            <a href="contact.html" style="color: var(--navy);">📧</a>
-          </div>
+          <h3>Hellen Omondi</h3>
+          <p class="team-title">Founder & Lead Consultant</p>
+          <p class="team-bio">CPA, KRA Registered Tax Agent. 8+ years experience in tax and accounting.</p>
         </div>
 
         <!-- Team Member 2 -->
         <div class="team-card">
           <div class="team-avatar">J</div>
-          <h3 style="color: var(--navy); margin-bottom: 5px;">James Mwangi</h3>
-          <p style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">Senior Tax Consultant</p>
-          <p style="color: var(--muted); font-size: 14px;">Tax specialist with expertise in corporate tax, VAT, and eTIMS compliance.</p>
-          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
-            <a href="contact.html" style="color: var(--navy);">📧</a>
-          </div>
+          <h3>Amos Mutua</h3>
+          <p class="team-title">Senior Tax Consultant</p>
+          <p class="team-bio">Tax specialist with expertise in corporate tax, VAT, and eTIMS compliance.</p>
         </div>
 
         <!-- Team Member 3 -->
         <div class="team-card">
           <div class="team-avatar">S</div>
-          <h3 style="color: var(--navy); margin-bottom: 5px;">Sarah Odhiambo</h3>
-          <p style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">Payroll Manager</p>
-          <p style="color: var(--muted); font-size: 14px;">Payroll specialist handling statutory deductions and compliance.</p>
-          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
-            <a href="contact.html" style="color: var(--navy);">📧</a>
-          </div>
-        </div>
-
-        <!-- Team Member 4 -->
-        <div class="team-card">
-          <div class="team-avatar">D</div>
-          <h3 style="color: var(--navy); margin-bottom: 5px;">David Kiprono</h3>
-          <p style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">Accounting Lead</p>
-          <p style="color: var(--muted); font-size: 14px;">Financial reporting, bookkeeping, and management accounts expert.</p>
-          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
-            <a href="contact.html" style="color: var(--navy);">📧</a>
-          </div>
+          <h3>Justin Mochama</h3>
+          <p class="team-title">Payroll Manager</p>
+          <p class="team-bio">Payroll specialist handling statutory deductions and compliance.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="section" style="background: linear-gradient(135deg, var(--navy) 0%, #1d4ed8 100%); color: white;">
+  <!-- Why Choose Us Stats -->
+  <section class="section" style="background: #091422;">
     <div class="container">
       <div class="section-title">
-        <h2 style="color: white;">Why Clients Choose Us</h2>
-        <p style="color: rgba(255,255,255,0.9);">We go beyond numbers to build lasting partnerships</p>
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Why Clients Choose Us</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>We Go Beyond <em>Numbers</em></h2>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
+      <div class="grid-3">
         <div style="text-align: center;">
-          <div style="font-size: 36px; margin-bottom: 15px;">⏰</div>
-          <h4 style="color: white; margin-bottom: 8px;">Timely Delivery</h4>
-          <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Always meet deadlines</p>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="font-size: 36px; margin-bottom: 15px;">🛡️</div>
-          <h4 style="color: white; margin-bottom: 8px;">100% Confidential</h4>
-          <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Your data is secure</p>
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏰</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">Timely Delivery</h3>
+          <p style="color: var(--muted);">Always meet deadlines with our proactive approach</p>
         </div>
 
         <div style="text-align: center;">
-          <div style="font-size: 36px; margin-bottom: 15px;">📊</div>
-          <h4 style="color: white; margin-bottom: 8px;">Expert Advice</h4>
-          <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Certified professionals</p>
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛡️</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">100% Confidential</h3>
+          <p style="color: var(--muted);">Your financial data is always secure and private</p>
         </div>
 
         <div style="text-align: center;">
-          <div style="font-size: 36px; margin-bottom: 15px;">💬</div>
-          <h4 style="color: white; margin-bottom: 8px;">24/7 Support</h4>
-          <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Always here to help</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>What Our Clients Say</h2>
-        <p>Real feedback from businesses we've helped</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
-        <div class="card">
-          <div style="color: var(--gold); font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-          <p style="color: var(--muted); margin-bottom: 20px;">"Global Hellen Consultants transformed our tax compliance. Professional, responsive, and reliable."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 50px; height: 50px; background: var(--soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">JK</div>
-            <div>
-              <h4 style="color: var(--navy);">John Kariuki</h4>
-              <p style="color: var(--muted); font-size: 13px;">CEO, Kariuki Enterprises</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div style="color: var(--gold); font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-          <p style="color: var(--muted); margin-bottom: 20px;">"Their payroll support has been a game-changer. No more compliance worries."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 50px; height: 50px; background: var(--soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">MA</div>
-            <div>
-              <h4 style="color: var(--navy);">Mary Atieno</h4>
-              <p style="color: var(--muted); font-size: 13px;">Director, Atieno Consultancy</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div style="color: var(--gold); font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-          <p style="color: var(--muted); margin-bottom: 20px;">"Professional, thorough, and always available. Best decision for our business."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 50px; height: 50px; background: var(--soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">PO</div>
-            <div>
-              <h4 style="color: var(--navy);">Peter Omondi</h4>
-              <p style="color: var(--muted); font-size: 13px;">Owner, Omondi Traders</p>
-            </div>
-          </div>
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">Expert Advice</h3>
+          <p style="color: var(--muted);">Certified professionals with deep industry knowledge</p>
         </div>
       </div>
     </div>
@@ -272,7 +231,7 @@
       </div>
       <div class="btn-row">
         <a href="contact.html" class="btn primary">Get in Touch</a>
-        <a href="https://wa.me/254702401751" class="btn outline" style="border-color: var(--gold); color: var(--navy); background: white;">WhatsApp Us</a>
+        <a href="https://wa.me/254702401751" class="btn outline">WhatsApp Us</a>
       </div>
     </div>
   </section>
@@ -280,10 +239,10 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Global Hellen Consultants</h3>
+        <h3>Hellen Global Consultants</h3>
         <p>
           Reliable financial services for tax compliance, payroll support, accounting, business registration,
-          and investment advisory.
+          and investment advisory. Trusted by 500+ businesses across Kenya.
         </p>
       </div>
 
@@ -292,19 +251,20 @@
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
         <p><a href="services.html">Services</a></p>
+        <p><a href="resources.html">Resources</a></p>
         <p><a href="contact.html">Contact</a></p>
       </div>
 
       <div>
         <h3>Contact</h3>
         <p>Nairobi, Kenya</p>
-        <p>Email:info@hellenglobalconsultants.co.ke</p>
+        <p>Email: hellenglobalconsultants.co.ke</p>
         <p>Phone: +254 702 401 751</p>
       </div>
     </div>
 
     <div class="container copy">
-      © <span id="year"></span> Global Hellen Consultants (H.G.C). All rights reserved.
+      © <span id="year"></span> Hellen Global Consultants (H.G.C). All rights reserved.
     </div>
   </footer>
 
