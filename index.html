@@ -4,116 +4,274 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hellen Global Consultants | Tax, Payroll & Accounting Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HC1YJW9B9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1HC1YJW9B9');
-</script>
 <body>
 
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand">Hellen <span>Global Consultants</span></a>
+      <a href="index.html" class="brand">
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="globeGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#8a6a1f"/>
+            </linearGradient>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8C96A" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.4"/>
+            </linearGradient>
+          </defs>
+          <circle cx="22" cy="22" r="21" stroke="url(#ringGrad)" stroke-width="1.2" fill="none"/>
+          <circle cx="22" cy="22" r="17" fill="#0D1B2E" stroke="url(#globeGrad)" stroke-width="1.5"/>
+          <ellipse cx="22" cy="22" rx="17" ry="7" stroke="url(#globeGrad)" stroke-width="0.8" fill="none" stroke-opacity="0.35"/>
+          <line x1="22" y1="5" x2="22" y2="39" stroke="url(#globeGrad)" stroke-width="0.7" stroke-opacity="0.3"/>
+          <path d="M6.5 17 Q22 14 37.5 17" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <path d="M6.5 27 Q22 30 37.5 27" stroke="url(#globeGrad)" stroke-width="0.6" fill="none" stroke-opacity="0.25"/>
+          <text x="22" y="26.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="11" fill="#C9A84C" letter-spacing="1.5">HGC</text>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-name">Hellen <span>Global</span></span>
+          <span class="logo-consultants">Consultants</span>
+          <div class="logo-divider"></div>
+          <span class="logo-sub">Bookkeeping &nbsp;·&nbsp; Tax &nbsp;·&nbsp; Advisory</span>
+        </div>
+      </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
 
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1>Smart Tax & Accounting Solutions for Growing Businesses</h1>
-        <p>
-          Hellen Global Consultants provides corporate tax filing, payroll support, accounting support,
-          eTIMS assistance, business registration services, and money market investment advisory.
-        </p>
+    <div class="grid-lines"></div>
 
-        <div class="btn-row">
-          <a href="contact.html" class="btn primary">Book a Consultation</a>
-          <a href="services.html" class="btn outline">Explore Services</a>
+    <div class="hero-left">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Trusted Financial Advisory</span>
+      </div>
+
+      <h1>Smart Tax & Accounting<br>Solutions for <em>Growing</em><br>Businesses</h1>
+
+      <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 440px; margin-bottom: 1.6rem;">
+        Your finances, fully handled. From KRA compliance and payroll to business setup and wealth growth — we bring <em style="color: var(--white); font-style: normal;">precision, speed, and expertise</em> to every financial decision your business makes.
+      </p>
+
+      <div class="value-pills">
+        <div class="pill">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12 13 4.5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          KRA-Compliant Filing
+        </div>
+        <div class="pill">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12 13 4.5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Payroll & Statutory
+        </div>
+        <div class="pill">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12 13 4.5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          eTIMS Support
+        </div>
+        <div class="pill">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12 13 4.5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Business Registration
         </div>
       </div>
 
-      <div class="card">
-        <span class="badge">Why Choose Us</span>
-        <h3>Compliance. Accuracy. Confidence.</h3>
-        <p>
-          We help individuals and companies stay compliant with tax obligations, reduce reporting stress,
-          and build stronger financial systems.
-        </p>
-        <br />
-        <p><b>✔ Fast Support</b></p>
-        <p><b>✔ Transparent Pricing</b></p>
-        <p><b>✔ Trusted Advisory</b></p>
+      <div class="btn-group" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="contact.html" class="btn primary">Book a Consultation</a>
+        <a href="services.html" class="btn outline">Explore Services</a>
+      </div>
+
+      <div class="stats" style="display: flex; gap: 2.5rem; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border);">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client Retention</div>
+        </div>
       </div>
     </div>
+
+    <div class="hero-right">
+      <div class="card-stack">
+        <div class="card-behind"></div>
+        <div class="card-main">
+          <div class="card-tag">Our Core Services</div>
+          <ul class="service-list">
+            <li>
+              <span class="service-icon">✦</span>
+              <div><strong>Strategic Tax Compliance</strong><br><small>Navigate KRA obligations with accurate, timely submissions.</small></div>
+            </li>
+            <li>
+              <span class="service-icon">✦</span>
+              <div><strong>Managed Payroll & Statutory</strong><br><small>Seamless PAYE, NSSF & SHIF processing — monthly.</small></div>
+            </li>
+            <li>
+              <span class="service-icon">✦</span>
+              <div><strong>Full-Cycle Accounting</strong><br><small>Real-time bookkeeping and insightful financial statements.</small></div>
+            </li>
+            <li>
+              <span class="service-icon">✦</span>
+              <div><strong>eTIMS Integration & Training</strong><br><small>Onboarding, troubleshooting & KRA-compliant invoicing.</small></div>
+            </li>
+            <li>
+              <span class="service-icon">✦</span>
+              <div><strong>Business Setup & Governance</strong><br><small>Company registration, CR12 support & compliance guidance.</small></div>
+            </li>
+          </ul>
+          <div class="card-divider"></div>
+          <div class="card-badge">
+            <div class="badge-dot"></div>
+            <span class="badge-text">Accepting new clients — Schedule today</span>
+          </div>
+        </div>
+      </div>
+      <span class="vert-text">Est. Nairobi, Kenya</span>
+    </div>
+
+    <div class="accent-line"></div>
   </section>
 
   <!-- Services Preview -->
   <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>Our Core Services</h2>
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">What We Offer</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>Our Core <em>Services</em></h2>
         <p>Professional financial solutions tailored for individuals, SMEs, and corporates.</p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <span class="badge">Tax</span>
+          <div class="service-icon-large">📋</div>
           <h3>Corporate Tax Filing</h3>
           <p>Annual returns, compliance checks, and timely submission with accurate reporting.</p>
+          <div class="badge">Tax</div>
         </div>
 
         <div class="card">
-          <span class="badge">Payroll</span>
+          <div class="service-icon-large">💼</div>
           <h3>Payroll Support</h3>
           <p>PAYE, NSSF, SHIF, and payroll processing support with monthly reporting.</p>
+          <div class="badge">Payroll</div>
         </div>
 
         <div class="card">
-          <span class="badge">Accounting</span>
+          <div class="service-icon-large">📊</div>
           <h3>Accounting Support</h3>
           <p>Bookkeeping, reconciliations, financial statements, and advisory.</p>
+          <div class="badge">Accounting</div>
         </div>
       </div>
 
-      <br><br>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="services.html" class="btn outline">View All Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" style="background: #091422;">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Why Choose Us</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>The <em>HGC</em> Advantage</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>✓ KRA & eTIMS Specialists</h3>
+          <p>We stay ahead of every KRA update, eTIMS regulation, and compliance deadline. Our team ensures your invoicing, VAT, and statutory filings are always accurate and submitted on time.</p>
+        </div>
+        <div class="card">
+          <h3>✓ End-to-End Financial Management</h3>
+          <p>From company registration to annual tax filing, payroll processing to investment advisory — everything your business needs financially is handled under one roof.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Personalised Service</h3>
+          <p>Every client gets a dedicated advisor who understands your business, anticipates your needs, and is reachable when it matters most.</p>
+        </div>
+        <div class="card">
+          <h3>✓ Transparent Pricing</h3>
+          <p>Clear, fair fee structures agreed upfront — no surprise invoices, no scope creep, no ambiguity. You always know exactly what you're paying for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Client Feedback</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2>What Our <em>Clients Say</em></h2>
+      </div>
 
       <div class="grid-3">
-        <div class="card">
-          <span class="badge">eTIMS</span>
-          <h3>eTIMS Support</h3>
-          <p>Setup, onboarding, troubleshooting, and compliance guidance for eTIMS users.</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Hellen Global Consultants transformed our tax compliance. Professional, responsive, and reliable. They've handled everything from eTIMS setup to monthly filings flawlessly."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JK</div>
+            <div class="author-info">
+              <h4>John Kariuki</h4>
+              <p>CEO, Kariuki Enterprises</p>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-          <span class="badge">Business</span>
-          <h3>Business Registration</h3>
-          <p>Company registration, CR12 support, and business compliance guidance.</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Their payroll support has been a game-changer. No more compliance worries, no more missed deadlines. They handle everything while we focus on growing our business."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MA</div>
+            <div class="author-info">
+              <h4>Mary Atieno</h4>
+              <p>Director, Atieno Consultancy</p>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-          <span class="badge">Investment</span>
-          <h3>Money Market Advisory</h3>
-          <p>Guidance on money market funds, savings plans, and risk-based investing.</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Professional, thorough, and always available. Best decision for our business. Their investment advisory has also helped us grow our savings significantly."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PO</div>
+            <div class="author-info">
+              <h4>Peter Omondi</h4>
+              <p>Owner, Omondi Traders</p>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -121,13 +279,13 @@
   <section class="section cta">
     <div class="container cta-wrap">
       <div>
-        <h2>Need tax help urgently?</h2>
-        <p>Talk to us today and get professional support within hours.</p>
+        <h2>Ready to work with us?</h2>
+        <p>Let's discuss how we can help your business stay compliant and grow.</p>
       </div>
       <div class="btn-row">
-  <a href="contact.html" class="btn primary">Get Started</a>
-  <a href="https://wa.me/254702401751" class="btn whatsapp">WhatsApp Us</a>
-</div>
+        <a href="contact.html" class="btn primary">Get Started</a>
+        <a href="https://wa.me/254702401751" class="btn whatsapp">WhatsApp Us</a>
+      </div>
     </div>
   </section>
 
@@ -138,7 +296,7 @@
         <h3>Hellen Global Consultants</h3>
         <p>
           Reliable financial services for tax compliance, payroll support, accounting, business registration,
-          and investment advisory.
+          and investment advisory. Trusted by 500+ businesses across Kenya.
         </p>
       </div>
 
@@ -147,22 +305,37 @@
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About</a></p>
         <p><a href="services.html">Services</a></p>
+        <p><a href="resources.html">Resources</a></p>
         <p><a href="contact.html">Contact</a></p>
       </div>
 
       <div>
         <h3>Contact</h3>
         <p>Nairobi, Kenya</p>
-        <p>Email: info@hellenglobalconsultants.co.ke</p>
-        <p>Phone: +254702401751</p>
+        <p>Email: hellenglobalconsultants.co.ke</p>
+        <p>Phone: +254 702 401 751</p>
+        <p>Mon-Fri, 8am-6pm</p>
       </div>
     </div>
 
     <div class="container copy">
-      © <span id="year"></span> Hellen Global Consultants(H.G.C). All rights reserved.
+      © <span id="year"></span> Hellen Global Consultants (H.G.C). All rights reserved.
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Pulse animation for badge dot
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.3); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 </body>
 </html>
