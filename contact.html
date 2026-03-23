@@ -342,10 +342,10 @@
 
         if (response.ok) {
           statusDiv.innerHTML = "✓ Message sent successfully! Refreshing page...";
-          statusDiv.className = "form-status success";
+          statusDiv.className = "form-submisssion success";
           // Refresh the page after 1.5 seconds to show a clean form
           setTimeout(() => {
-            window.location.reload();
+           window.location.href = 'contact.html';
           }, 1500);
         } else {
           const errorData = await response.json();
@@ -665,7 +665,7 @@
         }
       }).catch(error => {
         status.innerHTML = "Oops! Network error. Please check your connection.";
-        status.className = "form-status error";
+        status.className = "submission-status error";
       }).finally(() => {
         submitBtn.disabled = false;
       });
